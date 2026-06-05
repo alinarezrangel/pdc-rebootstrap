@@ -1,0 +1,6 @@
+scratch/
+outputs/
+cmake-build-*/
+.pseudod-build/
+*~
+\#*\#

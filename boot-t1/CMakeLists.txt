@@ -178,6 +178,12 @@ target_link_libraries(pdc PUBLIC pdcrt pdc_int)
 add_custom_target(default_target ALL DEPENDS pdcrt pdc)
 
 
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/toolchain.txt.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/toolchain.txt"
+  @ONLY
+)
+
 # ======= INSTALL
 
 
@@ -197,4 +203,8 @@ install(DIRECTORY runtime/c/pdcrt/
 
 install(FILES "${PDCRT_PUBLIC_INCLUDES}/pdcrt-plataforma.h"
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${BOOT_PREFIX}pdc/pdcrt
+)
+
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/toolchain.txt"
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/${BOOT_PREFIX}pdc
 )

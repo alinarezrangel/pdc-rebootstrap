@@ -35,7 +35,8 @@ cd build
 cmake -S .. -B . --install-prefix /usr/local -G Ninja
 cmake --build . -t latest -j 10
 # O también:
-#   cmake --build . -t boot-t1 -j 10
+#   cmake --build . -t boot_t1 -j 10
+# Nota como boot-t1 => boot_t1
 cmake --install .
 ```
 
